@@ -8,6 +8,10 @@
 </head>
 <body>
     <header>
-        Header
+        <nav>
+            Nav
+        </nav>
     </header>
     
+    <div class="row">
+        <div class="col-mg-8">
