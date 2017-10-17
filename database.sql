@@ -8,7 +8,7 @@ create table `users`(
     `name` varchar(50),
     `email` varchar(50) UNIQUE,
     `password` varchar(50),
-    `active` tinyint(1)
+    `active` tinyint(1) not null default 1
 );
 
 create table `role_user`(
@@ -37,7 +37,8 @@ create table `posts`(
     `id` int(11) primary key auto_increment,
     `title` varchar(100),
     `body` varchar(10000),
-    `user_id` int(11)
+    `user_id` int(11),
+    `active` tinyint(1) not null default 1
 );
 
 create table `comments`(
@@ -55,3 +56,6 @@ alter table `role_user` add constraint `role_user_foreign` foreign key (`user_id
 alter table `comments` add constraint `comment_post_foreign` foreign key (`post_id`) references `posts`(`id`); 
 alter table `comments` add constraint `comment_user_foreign` foreign key (`user_id`) references `users`(`id`); 
 alter table `posts` add constraint `post_user_foreign` foreign key (`user_id`) references `users`(`id`); 
+
+# Some data _-_-_-_-_
+insert into `users` (`name`, `email`, `password`, `active`)
