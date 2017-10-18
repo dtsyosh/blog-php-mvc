@@ -1,0 +1,11 @@
+body {
+    max-width: 900px;
+    margin: auto;
+    background: silver;
+    padding-bottom: 20px;
+}
+
+
+.navbar {
+margin-bottom: 20px;
+}

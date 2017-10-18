@@ -1,12 +1,20 @@
-        </div> <!-- End of div col-mg-8 -->
+</div>
+<!-- /.row -->
 
-        <?php require 'sidebar.php'; ?>
+</div>
+<!-- /.container -->
 
-    </div> <!-- End of div row -->
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+<div class="container">
+  <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+</div>
+<!-- /.container -->
+</footer>
 
-    <footer>
-        Footer
-    </footer>
+<!-- Bootstrap core JavaScript -->
+<script src="public/js/bootstrap.min.js"></script>
 
 </body>
+
 </html>

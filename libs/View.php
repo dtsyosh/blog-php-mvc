@@ -7,6 +7,7 @@ class View {
     public function render($name, $noInclude = false) {
         require 'views/inc/header.php';
         require 'views/' . $name . '.php';
+        require 'views/inc/sidebar.php';
         require 'views/inc/footer.php';
     }
 }
