@@ -6,6 +6,10 @@ class Controller {
         $this->view = new View();
     }
 
+    /**
+     * @param $name Model's name
+     * @param string $modelPath Model's path
+     */
     public function _loadModel($name, $modelPath = 'models/') {
 
         $path = $modelPath . $name . '_model.php';
