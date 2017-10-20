@@ -98,6 +98,7 @@ insert into `role_user` (`role_id`, `user_id`) values
 ',2);
 
 
-select permissions.name as Permissão, roles.name as Função from permission_role as p_r inner join
-permissions on p_r.permission_id = permissions.id  inner join
-roles on p_r.role_id = roles.id order by roles.id;
+# Query to test the foreign key
+#select permissions.name as Permissão, roles.name as Função from permission_role as p_r inner join
+#permissions on p_r.permission_id = permissions.id  inner join
+#roles on p_r.role_id = roles.id order by roles.id;
