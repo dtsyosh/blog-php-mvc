@@ -8,17 +8,22 @@ class Post extends Controller {
     }
 
     public function index() {
-        # pass
+
+        $this -> view -> title = 'Posts';
+
+        $this -> view -> render('post/index');
     }
 
     public function create() {
-        # send to create view
-        $this->view->title = 'Criar um novo post';
-        $this->view->render('post/create');
-    }
+        
+        $data = array(
+            'title' => $_POST['title'],
+            'body'  => $_POST['body']
+        );
 
-    public function store($request) {
-        # store a new row in database
+        $this -> model -> create($data);
+        
+        header('location: ' . URL);
     }
 
     public function update($id) {
