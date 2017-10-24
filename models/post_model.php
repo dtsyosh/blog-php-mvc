@@ -11,10 +11,12 @@ class Post_Model extends Model {
     }
 
     public function find($id) {
-        $post = $this->database->select('SELECT * from posts where posts.id = '.$id);
 
-        // Returning $post[0] because the command above returns a array
-        return $post[0];
+        // The result for select's method is an array, so I only took [0] position
+        $post = $this->database->select('SELECT * from posts where posts.id = '.$id)[0];
+
+        // Returning $post because the command above returns a array
+        return $post;
     }
 
     public function create($data) {
@@ -24,6 +26,12 @@ class Post_Model extends Model {
             'user_id' => 1,
             'active' => true
         ));
+    }
 
+    public function user($id) {
+
+        $user = $this->database->select('SELECT * FROM users where users.id = '. $id)[0];
+
+        return $user;
     }
 }

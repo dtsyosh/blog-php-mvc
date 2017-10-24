@@ -10,7 +10,15 @@ class Post extends Controller {
     public function index() {
 
         $this->view->title = 'Posts';
-        $this->view->posts = $this->model->selectAll();
+        $posts = $this->model->selectAll();
+        
+        // Adding user object in field 'user' in all posts
+        for ($i = 0; $i < count($posts); $i++) {
+            $posts[$i]['user'] = $this->model->user($posts[$i]['user_id']);
+        }
+
+        $this->view->posts = $posts;
+
         $this->view->render('post/index');
     }
 
@@ -35,6 +43,7 @@ class Post extends Controller {
     public function show($id) {
         
         $this->view->post = $this->model->find($id);
+        $this->view->post['user'] = $this->model->user($this->view->post['user_id']);
         $this->view->title = $this->view->post['title'];
         $this->view->render('post/show');
         //header('Refresh:0; location: '. URL .'post/show');
