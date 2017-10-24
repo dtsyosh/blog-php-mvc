@@ -1,4 +1,4 @@
-<form action="#" method="post">
+<form action="/post/create" method="post">
 
     <div class="form-group">
         <label>Título</label>
@@ -6,7 +6,7 @@
     </div>
     <hr>
     <div class="form-group">
-        <input type="text" name="body">
+        <textarea name="body" cols="50" rows="10"></textarea>
     </div>
     
 

@@ -11,10 +11,10 @@
     <title><?php echo $this->title; ?></title>
 
     <!-- Bootstrap core CSS -->
-    <link href="public/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="public/css/blog-post.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>public/css/blog-post.css" rel="stylesheet">
 
   </head>
 

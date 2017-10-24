@@ -21,7 +21,7 @@ class Bootstrap {
         }
 
         $this -> _loadController();
-
+        $this -> _callControllerMethods();
     }
     
     public function _getUrl() {

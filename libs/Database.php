@@ -85,7 +85,7 @@ class Database extends PDO {
      */
     public function delete($table, $where) {
         
-        return $this -> exec ("DELETE FROM $table WHERE $where")
+        return $this -> exec ("DELETE FROM $table WHERE $where");
     }
 
 }
