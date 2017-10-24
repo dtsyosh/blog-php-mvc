@@ -32,6 +32,14 @@ class Post extends Controller {
         }
     }
 
+    public function show($id) {
+        
+        $this->view->post = $this->model->find($id);
+        $this->view->title = $this->view->post['title'];
+        $this->view->render('post/show');
+        //header('Refresh:0; location: '. URL .'post/show');
+    }
+
     public function update($id) {
         # update
     }
