@@ -1,4 +1,4 @@
-<form action="/post/create" method="post">
+<form action="<?php echo URL; ?>post/create" method="post">
 
     <div class="form-group">
         <label>Título</label>

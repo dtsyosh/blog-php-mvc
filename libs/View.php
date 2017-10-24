@@ -18,4 +18,5 @@ class View {
             require 'views/' . $name . '.php';
         }
     }
+
 }
