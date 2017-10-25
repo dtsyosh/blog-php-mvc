@@ -10,6 +10,12 @@ class Post_Model extends Model {
         return $this->database->select('SELECT * from posts');
     }
 
+    /**
+     * Finds a post by id
+     *
+     * @param integer $id
+     * @return post
+     */
     public function find($id) {
 
         // The result for select's method is an array, so I only took [0] position
@@ -19,11 +25,12 @@ class Post_Model extends Model {
         return $post;
     }
 
+
     public function create($data) {
         $this->database->insert('posts', array(
             'title' => $data['title'],
             'body' => $data['body'],
-            'user_id' => 1,
+            'user_id' => 2,
             'active' => true
         ));
     }

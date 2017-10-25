@@ -11,4 +11,4 @@
 <p>Posted on January 1, 2017 at 12:00 PM</p>
 
 <hr>
-<?php echo $this->post['body']; ?>
+<p class="post-body"><?php echo $this->post['body']; ?></p>

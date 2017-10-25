@@ -19,7 +19,7 @@ foreach($this->posts as $post) {
     echo '<p>Posted on January 1, 2017 at 12:00 PM</p>';
     
     echo '<hr>';
-    echo $post['body'];
+    echo '<p class="post-body">'. $post['body'] .'</p>';
 
 
 }

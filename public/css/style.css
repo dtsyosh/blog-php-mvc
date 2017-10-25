@@ -7,3 +7,7 @@ margin-bottom: 20px;
     margin: auto;
     padding-top: 600px;
 }
+
+.post-body {
+    white-space: pre-line;
+}

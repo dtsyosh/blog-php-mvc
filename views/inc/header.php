@@ -16,6 +16,9 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo URL; ?>public/css/blog-post.css" rel="stylesheet">
 
+    <!-- Loading style.css -->
+    <link rel="stylesheet" href="<?php echo URL; ?>public/css/style.css">
+
   </head>
 
   <body>
