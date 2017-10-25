@@ -7,7 +7,6 @@ foreach($this->posts as $post) {
     # <!-- Title -->
     echo '<h1 class="mt-4"><a href='. URL .'post/show/'. $post['id'] .'>'. $post['title'] .'</a></h1>';
 
-
     # <!-- Author -->
     echo '<p class="lead">
         by
