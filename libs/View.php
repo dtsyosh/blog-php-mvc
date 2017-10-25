@@ -18,7 +18,7 @@ class View {
 
             include 'views/inc/header.php';
             require 'views/' . $name . '.php';
-            include 'views/inc/sidebar.php';
+            #include 'views/inc/sidebar.php';
             include 'views/inc/footer.php';
 
         } else {

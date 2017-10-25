@@ -24,7 +24,7 @@ class Post extends Controller {
 
     public function create() {
         
-        if(!isset($_POST['body'])) {
+        if($_SERVER['REQUEST_METHOD'] === 'GET') {
             $this->view->title = 'Criar nova publicação';
             $this->view->render('post/create');
         } else {
