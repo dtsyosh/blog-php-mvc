@@ -90,7 +90,7 @@ insert into `users` (`name`, `email`, `password`) values
  ('Geovana Helena', 'geovanahsps@gmail.com', '123456');
 
 insert into `role_user` (`role_id`, `user_id`) values
-(1, 3), (2, 4);
+(3, 1), (4, 2);
 
  insert into `posts` (`title`, `body`, `user_id`) values
  ('Lorem Ipsum', 'In sem justo, commodo ut, suscipit at, pharetra vitae, orci. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam id dolor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Mauris dictum', 1),

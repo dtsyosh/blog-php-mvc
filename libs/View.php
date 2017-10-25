@@ -4,6 +4,14 @@ class View {
     function __construct() {
 
     }
+
+    /**
+     * Renderize a view
+     *
+     * @param string $name
+     * @param boolean $noInclude
+     * @return void
+     */
     public function render($name, $noInclude = false) {
 
         if (!$noInclude) {

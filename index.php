@@ -1,7 +1,6 @@
 <?php
 
 require 'config.php';
-require __DIR__ . '/vendor/autoload.php';
 
 function autoloader($class_name) {
     include(LIBS . '/' . $class_name . '.php');
