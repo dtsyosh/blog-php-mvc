@@ -20,7 +20,7 @@ class User extends Controller {
             $data = array();
             $data['name'] = $_POST['name'];
             $data['email'] = $_POST['email'];
-            $data['password'] = $_POST['password'];
+            $data['password'] = password_hash($_POST['password']);
     
             $this->model->create($data); // check if this model exists
             header('location: ' . URL . 'user');

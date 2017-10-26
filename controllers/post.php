@@ -49,8 +49,14 @@ class Post extends Controller {
         //header('Refresh:0; location: '. URL .'post/show');
     }
 
-    public function update($id) {
-        # update
+    public function update($data) {
+
+        $postData = array(
+            'title' => $_POST['title'],
+            'body'  => $_POST['body']
+        );
+    
+       
     }
 
     public function destroy($id) {
