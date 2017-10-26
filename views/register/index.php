@@ -6,6 +6,7 @@
     </div>
     <div class="form-group">
         Email<br> <input type="email" name="email" id="">
+    </div>
     <div class="form-group">
         Senha<br> <input type="password" name="password" id="">
     </div>
