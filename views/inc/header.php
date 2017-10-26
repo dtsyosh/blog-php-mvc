@@ -22,7 +22,7 @@
   </head>
 
   <body>
-
+    <?php Session::init(); ?>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
@@ -44,7 +44,12 @@
               <a class="nav-link" href="#">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <?php
+              if(Session::get('loggedIn') == true)
+                echo '<a class="nav-link" href="#">'. $_SESSION['user']['name'] .'</a>';
+              else 
+                echo '<a class="nav-link" href="#">Não Logado</a>';
+              ?>
             </li>
           </ul>
         </div>
