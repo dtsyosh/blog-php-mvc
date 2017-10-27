@@ -8,15 +8,24 @@ class Post extends Controller {
     }
 
     public function index() {
+        require_once 'models/user_model.php';
 
+        
         $this->view->title = 'Posts';
         $posts = $this->model->selectAll();
         
         // Adding user object in field 'user' in all posts
         for ($i = 0; $i < count($posts); $i++) {
-            $posts[$i]['user'] = $this->model->user($posts[$i]['user_id']);
+            
+            $user = new User_Model();
+            $userDB = $this->model->user($posts[$i]['user_id']);
+            $user->name = $userDB['name'];
+            $user->email = $userDB['email'];
+            $user->id = $userDB['id'];
+            
+            $posts[$i]['user'] = $user;
         }
-
+        
         $this->view->posts = $posts;
 
         $this->view->render('post/index');
@@ -41,9 +50,21 @@ class Post extends Controller {
     }
 
     public function show($id) {
+        require_once 'models/user_model.php';
+
+        $user = new User_Model();
         
         $this->view->post = $this->model->find($id);
-        $this->view->post['user'] = $this->model->user($this->view->post['user_id']);
+        
+        $userDB = $this->model->user($this->view->post['user_id']);
+        $user->name = $userDB['name'];
+        $user->email = $userDB['email'];
+        $user->id = $userDB['id'];
+        
+        
+
+        $this->view->post['user'] = $user;
+        //
         $this->view->title = $this->view->post['title'];
         $this->view->render('post/show');
         //header('Refresh:0; location: '. URL .'post/show');

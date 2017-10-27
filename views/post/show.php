@@ -2,7 +2,7 @@
 <!-- Author -->
 <p class="lead">
     by
-    <a href="#"><?php echo $this->post['user']['name']; ?></a>
+    <a href="#"><?php echo $this->post['user']->name; ?></a>
     </p>
 
 <hr>

@@ -3,14 +3,14 @@
 <?php
 
 foreach($this->posts as $post) {
-    #var_dump($post);
+    # var_dump($post);
     # <!-- Title -->
     echo '<h1 class="mt-4"><a href='. URL .'post/show/'. $post['id'] .'>'. $post['title'] .'</a></h1>';
 
     # <!-- Author -->
     echo '<p class="lead">
         by
-        '. $post['user']['name'] .'
+        '. $post['user']->name .'
         </p>';
 
     echo '<hr>';
