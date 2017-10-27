@@ -31,6 +31,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
+<<<<<<< HEAD
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="<?php echo URL; ?>">Home
@@ -40,16 +41,14 @@
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>
             </li>
+=======
+          <ul class="navbar-nav ml-auto">      
+>>>>>>> 1490bab1ecb2a42387c4966666504857d2f825f3
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <a class="nav-link" href="<?php echo URL; ?>login">Entrar</a>
             </li>
             <li class="nav-item">
-              <?php
-              if(Session::get('loggedIn') == true)
-                echo '<a class="nav-link" href="#">'. $_SESSION['user']['name'] .'</a>';
-              else 
-                echo '<a class="nav-link" href="#">Não Logado</a>';
-              ?>
+              <a class="nav-link" href="<?php echo URL; ?>register">Cadastrar</a>
             </li>
           </ul>
         </div>
