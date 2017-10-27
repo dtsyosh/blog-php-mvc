@@ -45,7 +45,7 @@ create table `posts`(
 
 create table `comments`(
     `id` int(11) primary key auto_increment,
-    `text` varchar(10000),
+    `body` varchar(10000),
     `post_id` int(11),
     `user_id` int(11)
 );

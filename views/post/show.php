@@ -33,7 +33,20 @@
 <br>
 
 
+<?php
 
+if (empty($this->comments)) {
+    echo '<strong>Seja o primeiro a comentar</strong>';
+}else {
+    foreach ($this->comments as $comment)
+        echo '<div class="media mb-4">';
+        echo '    <div class="media-body">';
+        echo '        <h5 class="mt-0">'. $this->post['user']->name .'</h5>';
+        echo $comment->body;
+        echo '    </div>';
+        echo '</div>';
+}
+?>
 <!-- Author -->
 
 <!-- Date/Time -->
