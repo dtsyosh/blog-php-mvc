@@ -21,7 +21,7 @@ class User_Model extends Model {
         foreach ($roles as $role) {
             array_push($data, $this->database->select('SELECT * from roles as r
                 inner join users as u on u.role_id = r.id
-                and u.id = '. $this->id .' and r.name like = '. $role);
+                and u.id = '. $this->id .' and r.name like = '. $role));
 
         }
         return empty($data);
