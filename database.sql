@@ -10,12 +10,8 @@ create table `users`(
     `name` varchar(50),
     `email` varchar(50) UNIQUE,
     `password` varchar(50),
-    `active` tinyint(1) not null default 1
-);
-
-create table `role_user`(
     `role_id` int(11),
-    `user_id` int(11)
+    `active` tinyint(1) not null default 1
 );
 
 create table `roles`(
@@ -52,13 +48,13 @@ create table `comments`(
 );
 
 # Foreign keys _-_-_-_-_-_
+
 alter table `permission_role` add constraint `permission_role_foreign` foreign key (`role_id`) references `roles`(`id`); 
 alter table `permission_role` add constraint `role_permission_foreign` foreign key (`permission_id`) references `permissions`(`id`); 
-alter table `role_user` add constraint `user_role_foreign` foreign key (`role_id`) references `roles`(`id`); 
-alter table `role_user` add constraint `role_user_foreign` foreign key (`user_id`) references `users`(`id`); 
 alter table `comments` add constraint `comment_post_foreign` foreign key (`post_id`) references `posts`(`id`); 
 alter table `comments` add constraint `comment_user_foreign` foreign key (`user_id`) references `users`(`id`); 
 alter table `posts` add constraint `post_user_foreign` foreign key (`user_id`) references `users`(`id`); 
+alter table `users` add constraint `role_user_foreign` foreign key (`role_id`) references `roles`(`id`); 
 
 
 # Roles _-_-_-_-_-__
