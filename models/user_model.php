@@ -16,26 +16,15 @@ class User_Model extends Model {
         ));
     }
 
-    public function can($permission) {
+    public function hasRole($roles) {
+        $data = array();
+        foreach ($roles as $role) {
+            array_push($data, $this->database->select('SELECT * from roles as r
+                inner join users as u on u.role_id = r.id
+                and u.id = '. $this->id .' and r.name like = '. $role);
 
-        $data = $this->database->select('SELECT * FROM permissions as p
-            inner join
-            permission_role as pr on pr.permission_id = p.id
-            inner join
-            roles as r on r.id = pr.role_id
-            and
-            p.name like :permission
-            and
-            r.name like :role', [$permission, $this->getRole()]);
-
+        }
         return empty($data);
-    }
-
-    private function getRole() {
-        return $this->database->select(
-            'SELECT r.name from roles as r
-            inner join role_user as ru on ru.role_id = r.id
-            inner join user as u on u.id = ru.user_id')[0];
     }
 
 }
