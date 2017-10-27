@@ -23,13 +23,13 @@ class Login_Model extends Model {
             ':email' => $_POST['email'],
         ))[0];
 
-        if (crypt($_POST['password'], CRYPT_STD_DES) == $userDB['password']) {
+        if ($_POST['password'] == $userDB['password']) {
             // login
             $user->id = $userDB['id'];
             $user->name = $userDB['name'];
             $user->email = $userDB['email'];
             $user->role_id = $userDB['role_id'];
-            
+
             Session::init();
             Session::set('loggedIn', true);
             Session::set('user', $user);

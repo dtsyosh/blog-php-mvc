@@ -11,7 +11,7 @@ class Register_Model extends Model {
         $this->database->insert('users', array(
             'name'=> $data['name'],
             'email'=> $data['email'],
-            'password'=> crypt($_POST['password'], CRYPT_STD_DES),
+            'password'=> $_POST['password'],
             'active' => true
         ));
         
