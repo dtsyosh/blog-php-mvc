@@ -1,4 +1,4 @@
-<h1>Lista com todas as publicações</h1>
+<h1>Lista com todas as Publicações</h1>
 
 <?php
 
@@ -21,5 +21,16 @@ foreach($this->posts as $post) {
     echo '<hr>';
     echo '<p class="post-body">'. $post['body'] .'</p>';
 
-
 }
+
+
+
+    
+
+    
+
+    
+  
+
+
+       
