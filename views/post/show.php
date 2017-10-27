@@ -34,11 +34,28 @@
 
 
 <<<<<<< HEAD
+<?php
+
+if (empty($this->comments)) {
+    echo '<strong>Seja o primeiro a comentar</strong>';
+}else {
+    foreach ($this->comments as $comment)
+        echo '<div class="media mb-4">';
+        echo '    <div class="media-body">';
+        echo '        <h5 class="mt-0">'. $this->post['user']->name .'</h5>';
+        echo $comment->body;
+        echo '    </div>';
+        echo '</div>';
+}
+?>
+=======
+<<<<<<< HEAD
 
 
 =======
 >>>>>>> a2ddbbb5168fbecea4d343d40de8349a1d2abf1b
 
+>>>>>>> 99e6b01bc091264574325a86a145444a1525de09
 <!-- Author -->
 
 <!-- Date/Time -->

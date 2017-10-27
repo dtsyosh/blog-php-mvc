@@ -51,9 +51,11 @@ class Post extends Controller {
 
     public function show($id) {
         require_once 'models/user_model.php';
+        require_once 'models/comment_model.php';
 
         $user = new User_Model();
-        
+        $comment = new Comment_Model();
+
         $this->view->post = $this->model->find($id);
         
         $userDB = $this->model->user($this->view->post['user_id']);
@@ -62,7 +64,7 @@ class Post extends Controller {
         $user->id = $userDB['id'];
         
         
-
+        $this->view->comments = $comment->select($id);
         $this->view->post['user'] = $user;
         //
         $this->view->title = $this->view->post['title'];
