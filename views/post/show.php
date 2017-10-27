@@ -33,7 +33,6 @@
 <br>
 
 
-<h1 class="card my-4"><?php echo $this->post['body']; ?></h1>
 
 
 
