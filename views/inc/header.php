@@ -33,7 +33,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo URL; ?>login">Entrar</a>
+              <?php
+              if (Session::get('loggedIn') == true)
+                echo '<a class="nav-link">Olá, '. Session::get('user')->name .'</a>';
+              else
+                echo '<a class="nav-link" href="'. URL .'login">Entrar</a>';
+              ?>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo URL; ?>register">Cadastrar</a>
