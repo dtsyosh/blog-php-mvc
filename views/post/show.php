@@ -33,6 +33,7 @@
 <br>
 
 
+<<<<<<< HEAD
 <?php
 
 if (empty($this->comments)) {
@@ -47,6 +48,14 @@ if (empty($this->comments)) {
         echo '</div>';
 }
 ?>
+=======
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> a2ddbbb5168fbecea4d343d40de8349a1d2abf1b
+
+>>>>>>> 99e6b01bc091264574325a86a145444a1525de09
 <!-- Author -->
 
 <!-- Date/Time -->
