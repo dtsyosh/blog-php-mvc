@@ -7,6 +7,16 @@
 
 <hr>
 
+<?php
+    if ($_SESSION['loggedIn'] == true) {
+
+        if ($this->post['user']->hasRole(['super-admin', 'admin']) or 
+            $this->post['user']->id == $_SESSION['user']->id) {
+                echo '<button class="btn btn-danger">Deletar</button>';
+            }
+
+    }
+?>
 <!-- Date/Time -->
 <p>Posted on January 1, 2017 at 12:00 PM</p>
 

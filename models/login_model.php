@@ -14,12 +14,22 @@ class Login_Model extends Model {
             ':password' => password_hash($_POST['password'], PASSWORD_DEFAULT)
         ));
         */
-        $user = $this->database->select("SELECT * FROM users WHERE email = :email", array(
+
+        require_once 'models/user_model.php';
+
+        $user = new User_Model();
+
+        $userDB = $this->database->select("SELECT * FROM users WHERE email = :email", array(
             ':email' => $_POST['email'],
         ))[0];
 
-        if (crypt($_POST['password'], $user['password']) == $user['password']) {
+        if (crypt($_POST['password'], CRYPT_STD_DES) == $userDB['password']) {
             // login
+            $user->id = $userDB['id'];
+            $user->name = $userDB['name'];
+            $user->email = $userDB['email'];
+            $user->role_id = $userDB['role_id'];
+            
             Session::init();
             Session::set('loggedIn', true);
             Session::set('user', $user);
