@@ -47,7 +47,8 @@ create table `comments`(
     `id` int(11) primary key auto_increment,
     `body` varchar(10000),
     `post_id` int(11),
-    `user_id` int(11)
+    `user_id` int(11),
+    `active` tinyint(1) not null default 1
 );
 
 # Foreign keys _-_-_-_-_-_
